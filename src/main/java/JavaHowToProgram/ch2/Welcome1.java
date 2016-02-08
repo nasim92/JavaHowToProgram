@@ -14,14 +14,14 @@ public class Welcome1 extends JFrame{
     public Welcome1() throws HeadlessException {
         super("Welcome1");
 
-        mainPanel = new JPanel((new FlowLayout()));
+        mainPanel = new JPanel(new FlowLayout());
         welcomeTextPane = new JTextPane();
         welcomeButton = new JButton("Hello");
 
         mainPanel.add(welcomeTextPane);
         mainPanel.add(welcomeButton);
 
-        welcomeTextPane.setSize(200,400);
+        welcomeTextPane.setSize(200,900);
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         getContentPane().add(mainPanel);
