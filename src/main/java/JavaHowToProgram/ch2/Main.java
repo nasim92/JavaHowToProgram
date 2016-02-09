@@ -12,10 +12,15 @@ public class Main {
 //        w1.setVisible(true);
 //        w1.setSize(400, 200);
 
-            Welcome2 w2 = new Welcome2();
-            w2.setVisible(true);
-            w2.setSize(500, 500);
-            w2.input.setSize(400,500);
+//            Welcome2 w2 = new Welcome2();
+//            w2.setVisible(true);
+//            w2.setSize(500, 500);
+//            w2.input.setSize(400,500);
+
+        Stars printStar = new Stars();
+        printStar.setVisible(true);
+        printStar.setSize(500, 500);
+
 
     }
 }

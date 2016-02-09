@@ -11,7 +11,6 @@ public class Welcome2 extends JFrame {
     private JPanel mainPanel;
     private JButton button1;
     private JButton button2;
-
     public JTextArea input;
 
     public Welcome2() throws HeadlessException {
