@@ -1,18 +1,16 @@
 package main.java.JavaHowToProgram.ch2;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Stars extends JFrame{
-    private JPanel  mainPanel;
+public class Stars extends JFrame {
+    private JPanel mainPanel;
     private JButton clearStarsButton;
     private JTextArea printStarsArea;
     private JComboBox shapeListComboBox;
-    private enum shapeType {Triangle, Square, Rectangular};
-    private shapeType shape;
-    public Stars() throws HeadlessException {
+
+    public Stars(){
         super("Select your stars");
 
         mainPanel = new JPanel();
@@ -20,7 +18,7 @@ public class Stars extends JFrame{
 
         clearStarsButton = new JButton("ClearStars");
         printStarsArea = new JTextArea();
-        shapeListComboBox = new JComboBox(shapeType.values());
+        shapeListComboBox = new JComboBox(ShapeType.values());
 
         mainPanel.add(shapeListComboBox);
         mainPanel.add(clearStarsButton);
@@ -29,36 +27,35 @@ public class Stars extends JFrame{
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         getContentPane().add(mainPanel);
 
-        pack();
+
+        setSize(400, 200);
 
         clearStarsButton.addActionListener(new clearStarsButtonActionListener());
         shapeListComboBox.addActionListener(new shapeListComboBoxActionListener());
     }
 
-    public void printstars(String shape) {
-        switch(shape){
-            case "Rectangular":
-                for (int i = 2; i <= 5; i++){
+    public void printstars(ShapeType shape) {
+        switch (shape) {
+            case RECTANGULAR:
+                for (int i = 2; i <= 5; i++) {
                     printStarsArea.append("*");
                 }
                 printStarsArea.append("*\f   *\f\r\n");
-                for(int j = 2; j <= 3; j++){
+                for (int j = 2; j <= 3; j++) {
                     printStarsArea.append("*");
                 }
 
-            case "Square":
-                for(int i = 0; i < 10;i++){
-                    for(int j = 0; j < 5;j++){
+            case SQUARE:
+                for (int i = 0; i < 10; i++) {
+                    for (int j = 0; j < 5; j++) {
                         printStarsArea.append("*");
                     }
                     printStarsArea.append("" + '\n');
                 }
 
-            case "Triangle":
-                for (int i=0; i<6; i++)
-                {
-                    for (int j=0; j<i; j++)
-                    {
+            case TRIANGLE:
+                for (int i = 0; i < 6; i++) {
+                    for (int j = 0; j < i; j++) {
                         printStarsArea.append("*");
                     }
                     printStarsArea.append("" + '\n');
@@ -69,16 +66,19 @@ public class Stars extends JFrame{
     public class shapeListComboBoxActionListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            printstars(shapeListComboBox.getSelectedItem().toString());
-            pack();
+            clear();
+            printstars((ShapeType) shapeListComboBox.getSelectedItem());
         }
     }
 
     public class clearStarsButtonActionListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            printStarsArea.setText(null);
-            pack();
+            clear();
         }
+    }
+
+    private void clear() {
+        printStarsArea.setText(null);
     }
 }
