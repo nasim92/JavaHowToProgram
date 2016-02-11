@@ -6,14 +6,15 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Welcome2 extends JFrame {
+public class Welcome2Form extends JFrame {
 
     private JPanel mainPanel;
     private JButton button1;
     private JButton button2;
+
     public JTextArea input;
 
-    public Welcome2() throws HeadlessException {
+    public Welcome2Form() throws HeadlessException {
         super("Welcome2");
 
         mainPanel = new JPanel(new FlowLayout());

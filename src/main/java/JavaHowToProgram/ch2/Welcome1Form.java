@@ -5,13 +5,13 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Welcome1 extends JFrame{
+public class Welcome1Form extends JFrame{
 
     private JPanel mainPanel;
     private JButton welcomeButton;
     private JTextPane welcomeTextPane;
 
-    public Welcome1() throws HeadlessException {
+    public Welcome1Form() throws HeadlessException {
         super("Welcome1");
 
         mainPanel = new JPanel(new FlowLayout());
