@@ -8,6 +8,8 @@ public class Main {
 
 //        MaximumFinderForm mnf = new MaximumFinderForm();
 
-        SecureRandomForm app = new SecureRandomForm();
+//        SecureRandomForm app = new SecureRandomForm();
+        MethodOverLoadForm molf = new MethodOverLoadForm();
+
     }
 }

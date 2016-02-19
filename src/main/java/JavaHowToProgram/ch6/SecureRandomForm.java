@@ -1,7 +1,5 @@
 package main.java.JavaHowToProgram.ch6;
 
-import com.sun.tools.doclets.formats.html.SourceToHTMLConverter;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -28,17 +26,18 @@ public class SecureRandomForm extends JFrame{
         setVisible(true);
         setSize(500, 500);
 
+        textArea.setSize(300, 550);
+
         pack();
         generateRandomButton.addActionListener(new GenerateRandomButtonActionListener());
     }
 
-    public void RandomIntegers() {
+    public void randomIntegers() {
         SecureRandom randomNumbers = new SecureRandom();
 
         for (int counter = 1; counter <= 20; counter++) {
             int face = 1 + randomNumbers.nextInt(6);
-
-            System.out.printf("%d ", face);
+            textArea.setText(String.valueOf(face));
 
             if (counter % 5 == 0)
                 System.out.println();
@@ -50,7 +49,8 @@ public class SecureRandomForm extends JFrame{
     public class GenerateRandomButtonActionListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-         
+            randomIntegers();
+            pack();
         }
     }
 }
