@@ -51,18 +51,18 @@ public class MethodOverLoadForm extends JFrame {
         return doubleValue * doubleValue;
     }
 //matches("(\\.)")
-    public class SubmitButtonActionListener implements ActionListener{
+    public class SubmitButtonActionListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            if (valueTextField.getText().matches("\\.")){
-                double d = Double.parseDouble(valueTextField.getText());
-                squareValue.setText(Double.toString(square(d)));
+            if (valueTextField.getText().toString().contains(".")){
+                double d = Double.parseDouble(valueTextField.getText().toString());
+                squareValue.setText("" + square(d));
             }
             else {
-                int i = Integer.parseInt(valueTextField.getText());
+                int i = Integer.parseInt(valueTextField.getText().toString());
                 squareValue.setText(Integer.toString(square(i)));
-
             }
+
         }
     }
 }
